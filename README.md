@@ -21,6 +21,8 @@
 打开开始菜单，展开SBLZsoft文件夹，再展开autoshutdown文件夹，单击“取消关机”
 ### 卸载
 打开开始菜单，展开SBLZsoft文件夹，再展开autoshutdown文件夹，单击“自动关机-卸载程序”并按提示开始卸载
+
+* 由于技术问题，建议在资源管理器中输入%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\，将其中的autoshutdown-uninstaller复制到别处，再执行卸载操作
 ## 实现方法
 ### 控制面板
 ### 安装程序
@@ -52,9 +54,13 @@
 
 若想修改两次关机的时间，请分别更改l20与l23的/st参数；
 
-若想修改两次关机的
+若想修改关机的次数，请自行添加命令。（自行添加命令所造成的任何问题不受支持）
+
+* 注：建议在配置面板添加删除自行添加的计划任务的命令。
 
 ### 卸载程序
+
+
 ### 取消关机
 ## FAQ
 
