@@ -22,9 +22,10 @@
 ### 卸载
 打开开始菜单，展开SBLZsoft文件夹，再展开autoshutdown文件夹，单击“自动关机-卸载程序”并按提示开始卸载
 
-* 由于技术问题，建议在资源管理器中输入%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\，将其中的autoshutdown-uninstaller复制到别处，再执行卸载操作
+* 卸载完后程序会自动退出
 ## 实现方法
 ### 控制面板
+在本人另一个项目(PCorelbox)[https://github.com/idhaname/PCorelbox]的启动器基础上改的
 ### 安装程序
 当打开安装程序时，程序会询问管理员权限，这是为了能够顺利将自启程序复制到开机自启目录
 
@@ -59,9 +60,23 @@
 * 注：建议在配置面板添加删除自行添加的计划任务的命令。
 
 ### 卸载程序
+当打开安装程序时，程序会询问管理员权限，这是为了能够顺利将自启程序删除
 
+当用户确认开始卸载时，程序会：
 
+1.删除在临时文件夹（%temp%\SBLZsoft\autoshutdown-log\）用于存放日志的目录
+
+2.删除复制到%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\的自启程序
+
+3.删除所有关机计划任务
+
+4.取消关机
+
+5.删除%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\目录以及目录下的所有内容
+
+* 由于未在程序末尾设置断点，卸载完后程序会自动退出
 ### 取消关机
+执行shutdown -a命令
 ## FAQ
 
 Q:为何开发本软件？
