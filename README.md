@@ -25,7 +25,7 @@
 * 卸载完后程序会自动退出
 ## 实现方法
 ### 控制面板
-在本人另一个项目(PCorelbox)[https://github.com/idhaname/PCorelbox]的启动器基础上改的
+在本人另一个项目[PCorelbox](https://github.com/idhaname/PCorelbox)的启动器基础上改的
 ### 安装程序
 当打开安装程序时，程序会询问管理员权限，这是为了能够顺利将自启程序复制到开机自启目录
 
