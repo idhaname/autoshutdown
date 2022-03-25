@@ -31,17 +31,17 @@
 
 当用户确认开始安装时，程序会：
 
-1.在开始菜单（%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\）创建SBLZsoft\autoshutdown\目录用于存放主程序，在临时文件夹（%temp%\）创建SBLZsoft\autoshutdown-log\目录用于存放日志
+1.在开始菜单`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\`创建`SBLZsoft\autoshutdown\`目录用于存放主程序，在临时文件夹`%temp%\`创建SBLZsoft\autoshutdown-log\目录用于存放日志
 
 2.将主程序、控制面板、卸载程序、取消关机复制到上述的开始菜单目录
 
-3.将自启程序复制到%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\
+3.将自启程序复制到`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\`
 
 4.为上述除自启程序、主程序以外的组件创建快捷方式
 ### 开机自启
-安装时会将自启程序复制到%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\
+安装时会将自启程序复制到`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\`
 
-当电脑开机时，自启程序将会拉起主程序并记录日志在%temp%\SBLZsoft\autoshutdown-log\log.txt
+当电脑开机时，自启程序将会拉起主程序并记录日志在`%temp%\SBLZsoft\autoshutdown-log\log.txt`
 ### 主程序
 当电脑开机时，主程序被拉起
 
@@ -64,15 +64,15 @@
 
 当用户确认开始卸载时，程序会：
 
-1.删除在临时文件夹（%temp%\SBLZsoft\autoshutdown-log\）用于存放日志的目录
+1.删除在临时文件夹`%temp%\SBLZsoft\autoshutdown-log\`用于存放日志的目录
 
-2.删除复制到%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\的自启程序
+2.删除复制到`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\`的自启程序
 
 3.删除所有关机计划任务
 
 4.取消关机
 
-5.删除%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\目录以及目录下的所有内容
+5.删除`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\`目录以及目录下的所有内容
 
 * 由于未在程序末尾设置断点，卸载完后程序会自动退出
 ### 取消关机
