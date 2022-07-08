@@ -16,3 +16,5 @@ shutdown -a
 rd /s /q "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\"
 %windir%\system32\reg.exe delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /f
 echo 卸载完成！
+echo 按任意键退出. . .
+pause >nul
