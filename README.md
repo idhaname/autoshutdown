@@ -31,18 +31,24 @@
 
 当用户确认开始安装时，程序会：
 
-1.在开始菜单`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\`创建`SBLZsoft\autoshutdown\`目录用于存放主程序，在临时文件夹`%temp%\`创建SBLZsoft\autoshutdown-log\目录用于存放日志
+1.在开始菜单`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\`创建`SBLZsoft\autoshutdown\`目录用于存放主程序，在临时文件夹`%temp%\`创建`SBLZsoft\autoshutdown-log\`目录用于存放日志，在系统盘根目录创建`SBLZsoft\autoshutdown\`用于存放卸载程序
 
-2.将主程序、控制面板、卸载程序、取消关机复制到上述的开始菜单目录
+2.将主程序、控制面板、取消关机复制到上述的开始菜单目录，将卸载程序复制到对应的目录
 
 3.将自启程序复制到`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\`
 
 4.为上述除自启程序、主程序以外的组件创建快捷方式
+
+5.创建控制面板中的卸载程序注册表项
+
 ### 开机自启
+
 安装时会将自启程序复制到`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\`
 
 当电脑开机时，自启程序将会拉起主程序并记录日志在`%temp%\SBLZsoft\autoshutdown-log\log.txt`
+
 ### 主程序
+
 当电脑开机时，主程序被拉起
 
 主程序将会先用schtasks删除未执行却未被删除（大多数是意外提前关机造成的）的计划任务
@@ -51,9 +57,9 @@
 
 * 修改指南：
 
-程序默认创建两次计划任务，分别在09:44与18:00执行，弹出对话框提示Windows将在1分钟后关闭（即分别在09:45与18:01关机）
+程序默认创建两次计划任务，分别在09:49与18:04执行，弹出对话框提示Windows将在1分钟后关闭（即分别在09:50与18:05关机）
 
-若想修改两次关机的时间，请分别更改autoshutdown-main.bat中第20与23行的/st参数；
+若想修改两次关机的时间，请分别更改autoshutdown-main.bat中第20与23行的相关参数；
 
 若想修改关机的次数，请自行添加命令（修改命令所造成的任何问题不受支持）
 
@@ -74,7 +80,8 @@
 
 5.删除`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\`目录以及目录下的所有内容
 
-* 由于未在程序末尾设置断点，卸载完后程序会自动退出
+6.删除控制面板中的卸载程序注册表项
+
 ### 取消关机
 执行shutdown -a命令
 ## FAQ
@@ -83,7 +90,12 @@ Q:为何开发本软件？
 
 A:我们班的数学老师觉得铃声吵，学校广播又没有单独的开关，会直接拉掉与多媒体相连的电闸，造成电脑非正常关机。学校信息处开会，说非正常关机会影响电脑正常使用。因此我开发了本软件，在数学课前与放学前自动关机，减少老师拉电闸对电脑造成的损害。
 
+Q:为何开源？
+
+A:~~为开源社区做贡献~~ 不知道，就是写着玩。实际上，我们有一个闭源版本（教育版），与开源版本（开放版）不同的仅仅是版权信息与帮助/售后服务。您可[给我们发送电子邮件](mailto:idhaname-spam@outlook.com)（可能不会及时回复）或在线下获得。
+
 ## 版权
+
 Copyright 2020-2022 Soul-Blaze rod Studios
 
 Licensed under the Apache License, Version 2.0 (the "License");
