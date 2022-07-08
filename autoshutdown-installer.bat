@@ -11,7 +11,7 @@ pause >nul
 ::创建安装目录
 mkdir "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\"
 mkdir "%temp%\SBLZsoft\autoshutdown-log\"
-mkdir "%systemdrive%\SBLZsoft\autoshutdown\"
+::mkdir "%systemdrive%\SBLZsoft\autoshutdown\"
 ::复制文件
 copy autoshutdown-controlpanel.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\autoshutdown-controlpanel.bat"
 copy autoshutdown-uninstaller.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\autoshutdown-uninstaller.bat"
