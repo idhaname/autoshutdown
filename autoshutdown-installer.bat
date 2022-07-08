@@ -11,10 +11,10 @@ pause >nul
 ::创建安装目录
 mkdir "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\"
 mkdir "%temp%\SBLZsoft\autoshutdown-log\"
-::mkdir "%systemdrive%\SBLZsoft\autoshutdown\"
+mkdir "%systemdrive%\SBLZsoft\autoshutdown\"
 ::复制文件
 copy autoshutdown-controlpanel.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\autoshutdown-controlpanel.bat"
-copy autoshutdown-uninstaller.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\autoshutdown-uninstaller.bat"
+copy autoshutdown-uninstaller.bat "%systemdrive%\SBLZsoft\autoshutdown\autoshutdown-uninstaller.bat" /y
 copy cancelshutdown.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\cancelshutdown.bat"
 copy autoshutdown-main.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\autoshutdown-main.bat"
 copy autoshutdown-launcher.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\autoshutdown-launcher.bat"
@@ -27,7 +27,7 @@ echo URL=%path% >> %topath%
 echo IconIndex=0 >> %topath%
 echo IconFile="%systemdrive%\Windows\System32\cmd.exe" >> %topath%
 
-set path=file:///C:/ProgramData/Microsoft/Windows/Start Menu/Programs/SBLZsoft/autoshutdown/autoshutdown-uninstaller.bat
+set path=file:///C:/SBLZsoft/autoshutdown/autoshutdown-uninstaller.bat
 set topath="%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\自动关机-卸载程序.txt"
 echo [InternetShortcut] >> %topath%
 echo URL=%path% >> %topath%
@@ -48,7 +48,7 @@ ren "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\au
 
 ::注册表写入软件卸载信息
 %windir%\system32\reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /v DisplayIcon /t REG_SZ /d "%windir%\system32\cmd.exe"
-%windir%\system32\reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /v UninstallString /t REG_SZ /d "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\autoshutdown-uninstaller.bat"
+%windir%\system32\reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /v UninstallString /t REG_SZ /d "%systemdrive%\SBLZsoft\autoshutdown\autoshutdown-uninstaller.bat"
 %windir%\system32\reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /v Publisher /t REG_SZ /d "Soul-Blaze rod Studios"
 %windir%\system32\reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /v DisplayName /t REG_SZ /d "autoshutdown - 到点自动关机"
 %windir%\system32\reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /v DisplayVersion /t REG_SZ /d "Open Edition Beta3"
