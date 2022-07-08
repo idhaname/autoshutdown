@@ -14,5 +14,5 @@ schtasks /delete /tn "auto shutdown pm" /f
 schtasks /delete /tn "auto shutdown am" /f
 shutdown -a
 rd /s /q "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\"
-%windir%\system32\reg.exe delete /va "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /f
+%windir%\system32\reg.exe delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /f
 echo –∂‘ÿÕÍ≥…£°
