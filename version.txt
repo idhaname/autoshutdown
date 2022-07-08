@@ -1,10 +1,10 @@
 ================================关于 自动关机===================================
 
 AutoShutdown Version Information:
-Version:GitHub Edition Beta2
+Version:Open Edition Beta2
 
 自动关机版本信息：
-版本：GitHub版 测试版2
+版本：开放版 测试版2
 
 --------------------
 
