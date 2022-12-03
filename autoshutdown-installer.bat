@@ -1,7 +1,7 @@
 echo off
 %1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 cd /d %~dp0
-title 关机自动执行脚本-安装程序
+title 自动关机-安装程序
 color 07
 cls
 
@@ -12,39 +12,17 @@ pause >nul
 mkdir "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\"
 mkdir "%temp%\SBLZsoft\autoshutdown-log\"
 mkdir "%systemdrive%\SBLZsoft\autoshutdown\"
+mkdir "%localappdata%\SBLZsoft\autoshutdown\"
 ::复制文件
-copy autoshutdown-controlpanel.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\autoshutdown-controlpanel.bat"
+copy autoshutdown-controlpanel.bat "%localappdata%\SBLZsoft\autoshutdown\autoshutdown-controlpanel.bat"
 copy autoshutdown-uninstaller.bat "%systemdrive%\SBLZsoft\autoshutdown\autoshutdown-uninstaller.bat" /y
-copy cancelshutdown.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\cancelshutdown.bat"
-copy autoshutdown-main.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\autoshutdown-main.bat"
+copy cancelshutdown.bat "%localappdata%\SBLZsoft\autoshutdown\cancelshutdown.bat"
+copy autoshutdown-main.bat "%localappdata%\SBLZsoft\autoshutdown\autoshutdown-main.bat"
 copy autoshutdown-launcher.bat "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\autoshutdown-launcher.bat"
-
-::在C盘开始菜单创建文本文档
-set path=file:///C:/ProgramData/Microsoft/Windows/Start Menu/Programs/SBLZsoft/autoshutdown/autoshutdown-controlpanel.bat
-set topath="%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\自动关机-配置面板.txt"
-echo [InternetShortcut] >> %topath%
-echo URL=%path% >> %topath%
-echo IconIndex=0 >> %topath%
-echo IconFile="%systemdrive%\Windows\System32\cmd.exe" >> %topath%
-
-set path=file:///C:/SBLZsoft/autoshutdown/autoshutdown-uninstaller.bat
-set topath="%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\自动关机-卸载程序.txt"
-echo [InternetShortcut] >> %topath%
-echo URL=%path% >> %topath%
-echo IconIndex=0 >> %topath%
-echo IconFile="%systemdrive%\Windows\System32\cmd.exe" >> %topath%
-
-set path=file:///C:/ProgramData/Microsoft/Windows/Start Menu/Programs/SBLZsoft/autoshutdown/cancelshutdown.bat
-set topath="%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\取消关机.txt"
-echo [InternetShortcut] >> %topath%
-echo URL=%path% >> %topath%
-echo IconIndex=0 >> %topath%
-echo IconFile="%systemdrive%\Windows\System32\cmd.exe" >> %topath%
-
-::将文本文档更改为快捷方式
-ren "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\取消关机.txt" 取消关机.url
-ren "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\自动关机-配置面板.txt" 自动关机-配置面板.url
-ren "%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\自动关机-卸载程序.txt" 自动关机-卸载程序.url
+::创建快捷方式
+mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(""%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\自动关机-配置面板.lnk""):b.TargetPath=""%localappdata%\SBLZsoft\autoshutdown\autoshutdown-controlpanel.bat"":b.WorkingDirectory=""%~dp1"":b.IconLocation=(""%windir%\system32\cmd.exe""):b.Save:close")
+mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(""%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\自动关机-卸载程序.lnk""):b.TargetPath=""%systemdrive%\SBLZsoft\autoshutdown\autoshutdown-uninstaller.bat"":b.WorkingDirectory=""%~dp1"":b.IconLocation=(""%windir%\system32\cmd.exe""):b.Save:close")
+mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(""%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\取消关机.lnk""):b.TargetPath=""%localappdata%\SBLZsoft\autoshutdown\cancelshutdown.bat"":b.WorkingDirectory=""%~dp1"":b.IconLocation=(""%windir%\system32\cmd.exe""):b.Save:close")
 
 ::注册表写入软件卸载信息
 %windir%\system32\reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\autoshutdown" /v DisplayIcon /t REG_SZ /d "%windir%\system32\cmd.exe"

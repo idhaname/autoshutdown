@@ -25,7 +25,7 @@
 * 卸载完后程序会自动退出
 ## 实现方法
 ### 控制面板
-在本人另一个项目[PCorelbox for VM](https://github.com/idhaname/PCorelbox_VM-Launcher)的启动器基础上改的
+在本人另一个项目“PCorelbox for VM”的启动器基础上改的
 ### 安装程序
 当打开安装程序时，程序会询问管理员权限，这是为了能够顺利将自启程序复制到开机自启目录
 
@@ -66,6 +66,7 @@
 * 注：建议在配置面板添加删除自行添加的计划任务的命令
 
 ### 卸载程序
+
 当打开安装程序时，程序会询问管理员权限，这是为了能够顺利将自启程序删除
 
 当用户确认开始卸载时，程序会：
@@ -92,26 +93,21 @@ A:我们班的数学老师觉得铃声吵，学校广播又没有单独的开关
 
 Q:为何开源？
 
-A:~~为开源社区做贡献~~ 不知道，就是写着玩。实际上，我们有一个闭源版本（教育版），与开源版本（开放版）不同的仅仅是版权信息与帮助/售后服务。您可在线下获得。
+A:~~为开源社区做贡献~~ 不知道，就是写着玩。实际上，我们有一个闭源版本（教育版），与开源版本（开放版）不同的仅仅是版权信息与帮助/售后服务。
 
 ## 版权
 
-Copyright 2020-2022 Soul-Blaze rod Studios
-
-Licensed under the Apache License, Version 2.0 (the "License");
-
-you may not use this file except in compliance with the License.
-
-You may obtain a copy of the License at
-
-[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
-
-Unless required by applicable law or agreed to in writing, software
-
-distributed under the License is distributed on an "AS IS" BASIS,
-
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-
-See the License for the specific language governing permissions and
-
-limitations under the License.
+	Copyright 2020-2022 Soul-Blaze rod Studios
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	
+	See the License for the specific language governing permissions and
+	limitations under the License.

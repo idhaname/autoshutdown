@@ -1,10 +1,10 @@
 ================================关于 自动关机===================================
 
 AutoShutdown Version Information:
-Version:Open Edition Beta3
+Version:Open Edition Beta4
 
 自动关机版本信息：
-版本：开放版 测试版3
+版本：开放版 测试版4
 
 --------------------
 
