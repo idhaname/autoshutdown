@@ -1,7 +1,7 @@
 echo off
 %1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 cd /d %~dp0
-title 关机自动执行脚本-卸载程序
+title 自动关机-卸载程序
 color 07
 cls
 

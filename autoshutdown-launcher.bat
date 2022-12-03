@@ -1,6 +1,6 @@
 echo off
 cd /d %~dp0
-title 关机自动执行脚本-启动程序
+title 自动关机-启动程序
 color 07
 cls
 

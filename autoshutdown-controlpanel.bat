@@ -1,6 +1,6 @@
 echo off
 cd /d %~dp0
-title 关机自动执行脚本-配置面板
+title 自动关机-配置面板
 color 07
 cls
 

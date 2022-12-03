@@ -2,16 +2,20 @@
 ## 介绍
 本程序专门为学校打造，让学校的电脑定时关机，方便老师/信息处管理员，也方便电教课代表
 ## 使用方法
-### 安装
-1.在旁边的Releases中下载最新版本
+### 下载 & 安装
+1.克隆本仓库到本地
 
-2.下载后用压缩软件解压
+GitHub网页端：右上角`Code --> Download ZIP`。这将下载一个.zip文件到您的电脑上。将它解压并放在一个合适的目录里。
 
-3.双击autoshutdown-installer.bat并按提示开始安装
+GitHub Desktop：`File --> Clone repository --> URL --> idhaname/autoshutdown`
 
-4.安装完成后，重启电脑让脚本生效
+git：`git clone https://github.com/idhaname/autoshutdown.git`
 
-* 提示：由于技术限制，电脑系统不是Windows 10及以上，系统盘不是C盘可能会提示找不到文件
+* 注：若国内GitHub下载慢可用GitHub下载代理加速工具。
+
+2.双击autoshutdown-installer.bat并按提示开始安装
+
+3.安装完成后，重启电脑让脚本生效
 
 * 提示：如您想更改程序源代码，请先更改完成后再安装
 ### 取消关机
@@ -31,9 +35,9 @@
 
 当用户确认开始安装时，程序会：
 
-1.在开始菜单`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\`创建`SBLZsoft\autoshutdown\`目录用于存放主程序，在临时文件夹`%temp%\`创建`SBLZsoft\autoshutdown-log\`目录用于存放日志，在系统盘根目录创建`SBLZsoft\autoshutdown\`用于存放卸载程序
+1.在开始菜单`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\`创建`SBLZsoft\autoshutdown\`目录用于存放快捷方式，在临时文件夹`%temp%\`创建`SBLZsoft\autoshutdown-log\`目录用于存放日志，在系统盘根目录创建`SBLZsoft\autoshutdown\`用于存放卸载程序，在`%appdata%`创建`SBLZsoft\autoshutdown`用于存放主程序
 
-2.将主程序、控制面板、取消关机复制到上述的开始菜单目录，将卸载程序复制到对应的目录
+2.将主程序、控制面板、取消关机、卸载程序复制到对应的目录
 
 3.将自启程序复制到`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\`
 
@@ -71,17 +75,21 @@
 
 当用户确认开始卸载时，程序会：
 
-1.删除在临时文件夹`%temp%\SBLZsoft\autoshutdown-log\`用于存放日志的目录
+1.删除复制到`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\`的自启程序
 
-2.删除复制到`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\`的自启程序
+2.删除所有关机计划任务
 
-3.删除所有关机计划任务
+3.取消关机
 
-4.取消关机
+4.删除`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\`目录以及目录下的所有内容
 
-5.删除`%systemdrive%\ProgramData\Microsoft\Windows\Start Menu\Programs\SBLZsoft\autoshutdown\`目录以及目录下的所有内容
+5.删除`%localappdata%\SBLZsoft\autoshutdown\`目录以及目录下的所有内容
 
-6.删除控制面板中的卸载程序注册表项
+6.删除在临时文件夹`%temp%\SBLZsoft\autoshutdown-log\`用于存放日志的目录
+
+7.删除控制面板中的卸载程序注册表项
+
+8.当用户敲下回车键进入最后的卸载步骤时，删除在系统盘根目录下`SBLZsoft\autoshutdown\`目录中的卸载程序自身
 
 ### 取消关机
 执行shutdown -a命令
